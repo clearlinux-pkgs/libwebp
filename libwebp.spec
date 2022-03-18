@@ -4,7 +4,7 @@
 #
 Name     : libwebp
 Version  : 1.2.2
-Release  : 41
+Release  : 42
 URL      : https://github.com/webmproject/libwebp/archive/v1.2.2/libwebp-1.2.2.tar.gz
 Source0  : https://github.com/webmproject/libwebp/archive/v1.2.2/libwebp-1.2.2.tar.gz
 Summary  : Library for the WebP graphics format
@@ -16,7 +16,6 @@ Requires: libwebp-lib = %{version}-%{release}
 Requires: libwebp-license = %{version}-%{release}
 Requires: libwebp-man = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : buildreq-golang
 BuildRequires : freeglut-dev
 BuildRequires : gcc-dev32
 BuildRequires : gcc-libgcc32
@@ -129,7 +128,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1642694845
+export SOURCE_DATE_EPOCH=1647641928
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -174,7 +173,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1642694845
+export SOURCE_DATE_EPOCH=1647641928
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libwebp
 cp %{_builddir}/libwebp-1.2.2/COPYING %{buildroot}/usr/share/package-licenses/libwebp/59cd938fcbd6735b1ef91781280d6eb6c4b7c5d9
