@@ -14,6 +14,7 @@ Configure miss: TIFFGetVersion in -ltiff
 Configure miss: gif_lib.h
 Configure miss: gif_lib.h
 Configure miss: gif_lib.h
+Configure miss: i686-generic-linux-gnu-file
 Configure miss: if --disable-near-lossless option is specified
 Configure miss: if --disable-near-lossless option is specified
 Configure miss: if --disable-near-lossless option is specified
@@ -44,3 +45,5 @@ Configure miss: whether gcc supports -Wunreachable-code-aggressive
 Configure miss: whether libwebpextras is to be built
 Configure miss: whether libwebpextras is to be built
 Configure miss: whether libwebpextras is to be built
+Configure miss: x86_64-generic-linux-gnu-file
+Configure miss: x86_64-generic-linux-gnu-file
