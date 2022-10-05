@@ -4,7 +4,7 @@
 #
 Name     : libwebp
 Version  : 1.2.4
-Release  : 49
+Release  : 50
 URL      : https://github.com/webmproject/libwebp/archive/v1.2.4/libwebp-1.2.4.tar.gz
 Source0  : https://github.com/webmproject/libwebp/archive/v1.2.4/libwebp-1.2.4.tar.gz
 Summary  : Library for the WebP graphics format
@@ -131,15 +131,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1659969003
+export SOURCE_DATE_EPOCH=1664931329
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mprefer-vector-width=256 "
-export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mprefer-vector-width=256 "
-export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mprefer-vector-width=256 "
-export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mprefer-vector-width=256 "
+export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
 %autogen --disable-static --enable-libwebpdemux \
 --enable-libwebpmux
 make  %{?_smp_mflags}
@@ -176,10 +176,10 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1659969003
+export SOURCE_DATE_EPOCH=1664931329
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libwebp
-cp %{_builddir}/libwebp-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libwebp/59cd938fcbd6735b1ef91781280d6eb6c4b7c5d9
+cp %{_builddir}/libwebp-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libwebp/59cd938fcbd6735b1ef91781280d6eb6c4b7c5d9 || :
 pushd ../build32/
 %make_install32
 if [ -d  %{buildroot}/usr/lib32/pkgconfig ]
