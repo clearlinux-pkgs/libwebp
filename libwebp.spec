@@ -5,7 +5,7 @@
 #
 Name     : libwebp
 Version  : 1.3.0
-Release  : 54
+Release  : 56
 URL      : https://github.com/webmproject/libwebp/archive/v1.3.0/libwebp-1.3.0.tar.gz
 Source0  : https://github.com/webmproject/libwebp/archive/v1.3.0/libwebp-1.3.0.tar.gz
 Summary  : Library for the WebP graphics format
@@ -123,7 +123,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685633657
+export SOURCE_DATE_EPOCH=1685647338
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -168,7 +168,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1685633657
+export SOURCE_DATE_EPOCH=1685647338
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libwebp
 cp %{_builddir}/libwebp-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libwebp/59cd938fcbd6735b1ef91781280d6eb6c4b7c5d9 || :
