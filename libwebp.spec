@@ -4,10 +4,10 @@
 # Using build pattern: autogen
 #
 Name     : libwebp
-Version  : 1.3.0
-Release  : 56
-URL      : https://github.com/webmproject/libwebp/archive/v1.3.0/libwebp-1.3.0.tar.gz
-Source0  : https://github.com/webmproject/libwebp/archive/v1.3.0/libwebp-1.3.0.tar.gz
+Version  : 1.3.1
+Release  : 57
+URL      : https://github.com/webmproject/libwebp/archive/v1.3.1/libwebp-1.3.1.tar.gz
+Source0  : https://github.com/webmproject/libwebp/archive/v1.3.1/libwebp-1.3.1.tar.gz
 Summary  : Library for the WebP graphics format
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -39,7 +39,7 @@ __   __  ____  ____  ____
 \__\__/\____/\_____/__/ ____  ___
 / _/ /    \    \ /  _ \/ _/
 /  \_/   / /   \ \   __/  \__
-\____/____/\_____/_____/____/v1.3.0
+\____/____/\_____/_____/____/v1.3.1
 ```
 
 %package bin
@@ -109,13 +109,13 @@ man components for the libwebp package.
 
 
 %prep
-%setup -q -n libwebp-1.3.0
-cd %{_builddir}/libwebp-1.3.0
+%setup -q -n libwebp-1.3.1
+cd %{_builddir}/libwebp-1.3.1
 pushd ..
-cp -a libwebp-1.3.0 build32
+cp -a libwebp-1.3.1 build32
 popd
 pushd ..
-cp -a libwebp-1.3.0 buildavx2
+cp -a libwebp-1.3.1 buildavx2
 popd
 
 %build
@@ -123,7 +123,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685647338
+export SOURCE_DATE_EPOCH=1688053968
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -168,7 +168,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1685647338
+export SOURCE_DATE_EPOCH=1688053968
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libwebp
 cp %{_builddir}/libwebp-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libwebp/59cd938fcbd6735b1ef91781280d6eb6c4b7c5d9 || :
@@ -245,29 +245,29 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libsharpyuv.so.0.0.0
-/V3/usr/lib64/libwebp.so.7.1.6
-/V3/usr/lib64/libwebpdemux.so.2.0.12
-/V3/usr/lib64/libwebpmux.so.3.0.11
+/V3/usr/lib64/libsharpyuv.so.0.0.1
+/V3/usr/lib64/libwebp.so.7.1.7
+/V3/usr/lib64/libwebpdemux.so.2.0.13
+/V3/usr/lib64/libwebpmux.so.3.0.12
 /usr/lib64/libsharpyuv.so.0
-/usr/lib64/libsharpyuv.so.0.0.0
+/usr/lib64/libsharpyuv.so.0.0.1
 /usr/lib64/libwebp.so.7
-/usr/lib64/libwebp.so.7.1.6
+/usr/lib64/libwebp.so.7.1.7
 /usr/lib64/libwebpdemux.so.2
-/usr/lib64/libwebpdemux.so.2.0.12
+/usr/lib64/libwebpdemux.so.2.0.13
 /usr/lib64/libwebpmux.so.3
-/usr/lib64/libwebpmux.so.3.0.11
+/usr/lib64/libwebpmux.so.3.0.12
 
 %files lib32
 %defattr(-,root,root,-)
 /usr/lib32/libsharpyuv.so.0
-/usr/lib32/libsharpyuv.so.0.0.0
+/usr/lib32/libsharpyuv.so.0.0.1
 /usr/lib32/libwebp.so.7
-/usr/lib32/libwebp.so.7.1.6
+/usr/lib32/libwebp.so.7.1.7
 /usr/lib32/libwebpdemux.so.2
-/usr/lib32/libwebpdemux.so.2.0.12
+/usr/lib32/libwebpdemux.so.2.0.13
 /usr/lib32/libwebpmux.so.3
-/usr/lib32/libwebpmux.so.3.0.11
+/usr/lib32/libwebpmux.so.3.0.12
 
 %files license
 %defattr(0644,root,root,0755)
