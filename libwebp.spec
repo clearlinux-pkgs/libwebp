@@ -4,10 +4,10 @@
 # Using build pattern: autogen
 #
 Name     : libwebp
-Version  : 1.3.1
-Release  : 57
-URL      : https://github.com/webmproject/libwebp/archive/v1.3.1/libwebp-1.3.1.tar.gz
-Source0  : https://github.com/webmproject/libwebp/archive/v1.3.1/libwebp-1.3.1.tar.gz
+Version  : 1.3.2
+Release  : 58
+URL      : https://github.com/webmproject/libwebp/archive/v1.3.2/libwebp-1.3.2.tar.gz
+Source0  : https://github.com/webmproject/libwebp/archive/v1.3.2/libwebp-1.3.2.tar.gz
 Summary  : Library for the WebP graphics format
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -39,7 +39,7 @@ __   __  ____  ____  ____
 \__\__/\____/\_____/__/ ____  ___
 / _/ /    \    \ /  _ \/ _/
 /  \_/   / /   \ \   __/  \__
-\____/____/\_____/_____/____/v1.3.1
+\____/____/\_____/_____/____/v1.3.2
 ```
 
 %package bin
@@ -109,13 +109,13 @@ man components for the libwebp package.
 
 
 %prep
-%setup -q -n libwebp-1.3.1
-cd %{_builddir}/libwebp-1.3.1
+%setup -q -n libwebp-1.3.2
+cd %{_builddir}/libwebp-1.3.2
 pushd ..
-cp -a libwebp-1.3.1 build32
+cp -a libwebp-1.3.2 build32
 popd
 pushd ..
-cp -a libwebp-1.3.1 buildavx2
+cp -a libwebp-1.3.2 buildavx2
 popd
 
 %build
@@ -123,15 +123,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688053968
+export SOURCE_DATE_EPOCH=1694704729
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
-export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
-export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
-export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 %autogen --disable-static --enable-libwebpdemux \
 --enable-libwebpmux
 make  %{?_smp_mflags}
@@ -168,7 +168,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1688053968
+export SOURCE_DATE_EPOCH=1694704729
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libwebp
 cp %{_builddir}/libwebp-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libwebp/59cd938fcbd6735b1ef91781280d6eb6c4b7c5d9 || :
@@ -246,28 +246,28 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /V3/usr/lib64/libsharpyuv.so.0.0.1
-/V3/usr/lib64/libwebp.so.7.1.7
-/V3/usr/lib64/libwebpdemux.so.2.0.13
-/V3/usr/lib64/libwebpmux.so.3.0.12
+/V3/usr/lib64/libwebp.so.7.1.8
+/V3/usr/lib64/libwebpdemux.so.2.0.14
+/V3/usr/lib64/libwebpmux.so.3.0.13
 /usr/lib64/libsharpyuv.so.0
 /usr/lib64/libsharpyuv.so.0.0.1
 /usr/lib64/libwebp.so.7
-/usr/lib64/libwebp.so.7.1.7
+/usr/lib64/libwebp.so.7.1.8
 /usr/lib64/libwebpdemux.so.2
-/usr/lib64/libwebpdemux.so.2.0.13
+/usr/lib64/libwebpdemux.so.2.0.14
 /usr/lib64/libwebpmux.so.3
-/usr/lib64/libwebpmux.so.3.0.12
+/usr/lib64/libwebpmux.so.3.0.13
 
 %files lib32
 %defattr(-,root,root,-)
 /usr/lib32/libsharpyuv.so.0
 /usr/lib32/libsharpyuv.so.0.0.1
 /usr/lib32/libwebp.so.7
-/usr/lib32/libwebp.so.7.1.7
+/usr/lib32/libwebp.so.7.1.8
 /usr/lib32/libwebpdemux.so.2
-/usr/lib32/libwebpdemux.so.2.0.13
+/usr/lib32/libwebpdemux.so.2.0.14
 /usr/lib32/libwebpmux.so.3
-/usr/lib32/libwebpmux.so.3.0.12
+/usr/lib32/libwebpmux.so.3.0.13
 
 %files license
 %defattr(0644,root,root,0755)
