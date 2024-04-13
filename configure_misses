@@ -4,12 +4,6 @@ Configure miss: GLUT/glut.h
 Configure miss: GLUT/glut.h
 Configure miss: OpenGL/glut.h
 Configure miss: OpenGL/glut.h
-Configure miss: SDL.h
-Configure miss: SDL.h
-Configure miss: SDL.h
-Configure miss: SDL/SDL.h
-Configure miss: SDL/SDL.h
-Configure miss: SDL/SDL.h
 Configure miss: TIFFGetVersion in -ltiff
 Configure miss: gif_lib.h
 Configure miss: gif_lib.h
@@ -21,9 +15,6 @@ Configure miss: if --disable-near-lossless option is specified
 Configure miss: if --enable-swap-16bit-csp option is specified
 Configure miss: if --enable-swap-16bit-csp option is specified
 Configure miss: if --enable-swap-16bit-csp option is specified
-Configure miss: sdl-config
-Configure miss: sdl-config
-Configure miss: sdl-config
 Configure miss: whether asserts are enabled
 Configure miss: whether asserts are enabled
 Configure miss: whether asserts are enabled
@@ -33,6 +24,9 @@ Configure miss: whether decoder library is to be built
 Configure miss: whether gcc supports -Wconstant-conversion
 Configure miss: whether gcc supports -Wconstant-conversion
 Configure miss: whether gcc supports -Wconstant-conversion
+Configure miss: whether gcc supports -Wextra-semi-stmt
+Configure miss: whether gcc supports -Wextra-semi-stmt
+Configure miss: whether gcc supports -Wextra-semi-stmt
 Configure miss: whether gcc supports -Wparentheses-equality
 Configure miss: whether gcc supports -Wparentheses-equality
 Configure miss: whether gcc supports -Wparentheses-equality
